@@ -33,7 +33,7 @@ docker run \
         --rm -it \
         -p 8025:8025 \
         --name wsserver \
-        docker.io/brunoe/demowebsocket.server:
+        docker.io/brunoe/demowebsocket.server:develop
 ```
 
 Launch one or more client linked to the server.
@@ -42,7 +42,7 @@ docker run \
         --rm -it \
         --link wsserver \
         --env JAVA_OPTS="-Dfr.univtln.bruno.demo.websocket.server.ip=wsserver" \
-        docker.io/brunoe/demowebsocket.javaclient:03cecac
+        docker.io/brunoe/demowebsocket.javaclient:develop
 ```
 
 Launch one or more web clients and open http://localhost:8080 (or map another port).
@@ -53,5 +53,5 @@ docker run \
         --link wsserver \
         --rm \
         -p 8080:8080 \
-        brunoe/demowebsocket.webclient:03cecac
+        brunoe/demowebsocket.webclient:develop
 ```
