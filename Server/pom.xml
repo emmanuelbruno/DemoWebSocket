@@ -1,40 +1,38 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>fr.univtln.bruno.test.simple.websocket</groupId>
-        <artifactId>SimpleWebSocket</artifactId>
-        <version>1.0</version>
+        <groupId>fr.univtln.bruno.demo.websocket</groupId>
+        <artifactId>DemoWebSocket</artifactId>
+        <version>2.0</version>
     </parent>
 
     <artifactId>Server</artifactId>
     <packaging>jar</packaging>
 
-    <name>SimpleWebSocketServer</name>
+    <name>Demo WebSocket Server</name>
 
     <properties>
-        <fr.univtln.bruno.mainClass>fr.univtln.bruno.test.simple.websocket.server.Server</fr.univtln.bruno.mainClass>
+        <fr.univtln.bruno.mainClass>fr.univtln.bruno.demo.websocket.server.Server</fr.univtln.bruno.mainClass>
     </properties>
 
     <dependencies>
-
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-server</artifactId>
-            <version>1.5</version>
+            <version>${tyrus.version}</version>
         </dependency>
 
         <dependency>
             <groupId>org.glassfish.tyrus</groupId>
             <artifactId>tyrus-container-grizzly-server</artifactId>
-            <version>1.5</version>
+            <version>${tyrus.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>fr.univtln.bruno.test.simple.websocket</groupId>
-            <artifactId>Message</artifactId>
-            <version>1.0.1</version>
+            <groupId>fr.univtln.bruno.demo.websocket</groupId>
+            <artifactId>Model</artifactId>
+            <version>2.0</version>
         </dependency>
 
     </dependencies>
@@ -43,7 +41,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <version>2.6</version>
+                <version>3.1.0</version>
                 <configuration>
                     <archive>
                         <manifest>
@@ -68,7 +66,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>2.5</version>
+                <version>3.2.0</version>
                 <configuration>
                     <archive>
                         <manifest>
